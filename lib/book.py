@@ -12,16 +12,18 @@ class Book:
         return self.page_count
     
     def set_count (self, count):
-        if isinstance(count, int) and (count > 50):
-            print(f"the count is { count }")
+        if isinstance(count, int) and (count > 1):
+            print("Flipping the page...wow, you read fast!")
             self.page_count = count
         else:
-            print("Flipping the page...wow, you read fast!")    
+            print("page_count must be an integer")  
+
+    count = property(page_count, set_count,)          
     
 
 
 book= Book("And Then There Were None", 272) 
 print(book.title) 
 print(book.page_count)      
-    
+book.count = "twenty"    
         
